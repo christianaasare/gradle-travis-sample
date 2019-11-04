@@ -7,6 +7,6 @@ public class Private extends Client {
 
     @Override
     public String getName() {
-        return null;
+        return getName();
     }
 }

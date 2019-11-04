@@ -10,4 +10,18 @@ public abstract class Client implements ContactName {
         this.id = id;
         this.serviceLevel = serviceLevel;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", serviceLevel=" + serviceLevel +
+                '}';
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
 }
