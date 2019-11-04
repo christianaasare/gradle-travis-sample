@@ -24,4 +24,8 @@ public abstract class Client implements ContactName {
     public String getName() {
         return name;
     }
+
+    public ServiceLevel getServiceLevel() {
+        return serviceLevel;
+    }
 }

@@ -2,31 +2,32 @@ package io.turntabl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class ClientRegister {
-    private List<Corporate> corporateClients;
-    private List<Private> privateClients;
+public class ClientRegister implements ContactName{
+    private List<Client> clients;
 
-    public ClientRegister(List<Corporate> corporateClients, List<Private> privateClients) {
-        this.corporateClients = corporateClients;
-        this.privateClients = privateClients;
+
+    public ClientRegister(List<Client> clients) {
+        this.clients = clients;
     }
 
-    public List<String> getRegisterPrivateClient(){
-        List<String> privateClientNames = new ArrayList<>();
-        for(Private privateClient: privateClients){
-            privateClientNames.add(privateClient.getName());
-
-        }
-        return privateClientNames;
+    public List<String> getClientName(){
+        List<String> clientNames = new ArrayList<>();
+        return clients.stream().map(Client::getName).collect(Collectors.toList());
     }
 
-    public List<String> getRegisterCorporateClient(){
-        List<String> corporateClientNames = new ArrayList<>();
-        for(Corporate corporateClient: corporateClients){
-            corporateClientNames.add(corporateClient.getName());
+    public List<String> getGoldClients(ServiceLevel serviceLevel){
 
-        }
-        return corporateClientNames;
+        return clients.stream().filter(client -> client.getServiceLevel()==serviceLevel.Gold)
+                .map(Client::getName)
+                .collect(Collectors.toList());
+
+
+}
+
+    @Override
+    public String getName() {
+        return getName();
     }
 }
