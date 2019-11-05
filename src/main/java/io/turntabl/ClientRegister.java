@@ -2,14 +2,21 @@ package io.turntabl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class ClientRegister implements ContactName{
     private List<Client> clients;
 
 
-    public ClientRegister(List<Client> clients) {
+    public ClientRegister(List<Client> clients)
+    {
         this.clients = clients;
+    }
+
+    @Override
+    public String getName() {
+        return getName();
     }
 
     public List<String> getClientName(){
@@ -22,12 +29,14 @@ public class ClientRegister implements ContactName{
         return clients.stream().filter(client -> client.getServiceLevel()==serviceLevel.Gold)
                 .map(Client::getName)
                 .collect(Collectors.toList());
+        }
+//    public Optional<Client> getClientById(Integer id){
+//        Optional<Client> clientName = clients.stream()
+//                .filter(client -> cl
+//        return clientName;
+//        }
 
 
-}
 
-    @Override
-    public String getName() {
-        return getName();
-    }
+
 }

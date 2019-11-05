@@ -28,4 +28,8 @@ public abstract class Client implements ContactName {
     public ServiceLevel getServiceLevel() {
         return serviceLevel;
     }
+
+    public int getId() {
+        return id;
+    }
 }
