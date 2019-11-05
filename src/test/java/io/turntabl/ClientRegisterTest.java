@@ -45,8 +45,8 @@ public class ClientRegisterTest {
 
         );
         ClientRegister clientRegister = new ClientRegister(clients);
-        List<String> expectedGoldClients= Arrays.asList("Harrison","Grace", "Debby");
-        assertEquals(expectedGoldClients,clientRegister.getGoldClients(ServiceLevel.Gold));
+        List<String> expectedGoldClients= Arrays.asList("Harrison","Grace", "Debby","Richard");
+        assertEquals(expectedGoldClients, clientRegister.getGoldClients(ServiceLevel.Gold));
     }
 
 }
